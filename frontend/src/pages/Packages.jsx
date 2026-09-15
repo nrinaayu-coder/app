@@ -60,7 +60,7 @@ export default function Packages() {
               {others.map((car) => (
                 <div key={car.slug} className="bg-cream p-6 flex flex-col" data-testid={`package-card-${car.slug}`}>
                   <div className="img-frame aspect-[4/3]">
-                    <img src={car.teanaStock || car.image} alt={car.alt} loading="lazy" className="editorial-img" />
+                    <img src={car.stockImage || car.image} alt={car.alt} loading="lazy" className="editorial-img" />
                   </div>
                   <h3 className="mt-5 font-serif text-xl text-charcoal">{car.name}</h3>
                   <p className="mt-1 text-xs font-serif italic text-muted2">{car.tagline}</p>

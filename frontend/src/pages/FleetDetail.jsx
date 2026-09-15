@@ -62,7 +62,7 @@ export default function FleetDetail() {
   }
 
   const isBMW = car.slug === "bmw-5-series";
-  const heroImg = car.teanaStock || car.image;
+  const heroImg = car.stockImage || car.image;
   const message = isBMW ? WA_MESSAGES.bmw : WA_MESSAGES.car(car.name);
   const crumbs = [
     { name: "Home", path: "/" },

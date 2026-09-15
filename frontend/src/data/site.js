@@ -126,19 +126,19 @@ export const FLEET = [
     ],
   },
   {
-    slug: "teana",
-    name: "Nissan Teana",
-    tagline: "Quiet comfort, understated luxury.",
+    slug: "alphard",
+    name: "Toyota Alphard",
+    tagline: "First-class comfort, unmistakable presence.",
     price: null,
-    image: "/images/fleet-teana.jpg",
-    teanaStock: "https://images.unsplash.com/photo-1693762464020-fc46e9cbeb33?crop=entropy&cs=srgb&fm=jpg&q=85",
-    alt: "Nissan Teana sedan untuk wedding car",
+    image: "/images/fleet-alphard.jpg",
+    stockImage: "https://images.unsplash.com/photo-1693762464020-fc46e9cbeb33?crop=entropy&cs=srgb&fm=jpg&q=85",
+    alt: "Toyota Alphard untuk wedding car",
     description:
-      "Nissan Teana menawarkan kenyamanan khas sedan premium dengan kesan mewah yang tenang — cocok untuk pengantin yang menyukai elegansi sederhana.",
+      "Toyota Alphard menghadirkan kemewahan dan kenyamanan kelas satu dengan kabin super lega — favorit untuk pengantin berbusana lengkap dan rombongan keluarga.",
     why: [
-      "Sedan premium dengan kabin senyap dan nyaman",
-      "Desain elegan yang tidak berlebihan",
-      "Nyaman untuk pengantin dan keluarga inti",
+      "Kabin sangat lega, ideal untuk gaun dan busana adat",
+      "Kesan mewah dan berwibawa saat kedatangan",
+      "Nyaman untuk pengantin maupun keluarga inti",
     ],
   },
 ];
@@ -227,7 +227,7 @@ export const LOCATIONS = [
 export const FAQS = [
   {
     q: "Berapa harga sewa wedding car?",
-    a: "BMW 5 Series tersedia mulai dari Rp1.999.000. Harga final dapat bervariasi tergantung tanggal wedding, lokasi, durasi, dan ketersediaan. Untuk kendaraan lain seperti Mercedes-Benz, Toyota Fortuner, Mitsubishi Xpander, dan Nissan Teana, silakan hubungi kami untuk harga & availability.",
+    a: "BMW 5 Series tersedia mulai dari Rp1.999.000. Harga final dapat bervariasi tergantung tanggal wedding, lokasi, durasi, dan ketersediaan. Untuk kendaraan lain seperti Mercedes-Benz, Toyota Fortuner, Mitsubishi Xpander, dan Toyota Alphard, silakan hubungi kami untuk harga & availability.",
   },
   { q: "Apakah sudah termasuk driver?", a: FALLBACK_ANSWER },
   { q: "Apakah tersedia dekorasi bunga?", a: FALLBACK_ANSWER },

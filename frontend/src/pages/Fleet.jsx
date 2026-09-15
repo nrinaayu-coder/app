@@ -10,7 +10,7 @@ export default function Fleet() {
     <>
       <SEO
         title="Our Wedding Cars — BMW, Mercedes-Benz & More | The Wedding Cars"
-        description="Pilih wedding car untuk hari pernikahan Anda: BMW 5 Series mulai Rp1.999.000, Mercedes-Benz, Toyota Fortuner, Mitsubishi Xpander, Nissan Teana. Bogor, Jabodetabek & Bandung."
+        description="Pilih wedding car untuk hari pernikahan Anda: BMW 5 Series mulai Rp1.999.000, Mercedes-Benz, Toyota Fortuner, Mitsubishi Xpander, Toyota Alphard. Bogor, Jabodetabek & Bandung."
         path="/wedding-cars"
         breadcrumbs={[{ name: "Home", path: "/" }, { name: "Wedding Cars", path: "/wedding-cars" }]}
       />

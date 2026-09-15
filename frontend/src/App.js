@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route, useLocation, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Link, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FloatingWhatsApp, StickyMobileCTA } from "@/components/Conversion";
@@ -49,6 +49,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/wedding-cars" element={<Fleet />} />
             <Route path="/wedding-cars/:slug" element={<FleetDetail />} />
+            <Route path="/wedding-cars/teana" element={<Navigate to="/wedding-cars/alphard" replace />} />
             <Route path="/real-weddings" element={<RealWeddings />} />
             <Route path="/packages" element={<Packages />} />
             {LOCATIONS.map((l) => (

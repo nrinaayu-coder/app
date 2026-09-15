@@ -66,7 +66,7 @@ export function TrustStrip() {
 }
 
 export function FleetCard({ car, large = false }) {
-  const img = car.teanaStock || car.image;
+  const img = car.stockImage || car.image;
   return (
     <Link
       to={`/wedding-cars/${car.slug}`}

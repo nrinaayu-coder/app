@@ -29,7 +29,7 @@ Build a production-ready, responsive website for THE WEDDING CARS — a premium 
 - LocalBusiness/Organization/Product/FAQPage/BreadcrumbList structured data
 
 ## Known Limitations
-- Nissan Teana has no supplied photo; uses a single stock sedan image (all other imagery is real client photography)
+- Toyota Alphard replaced Nissan Teana in the fleet (per visual edit, 2026-09-15); it currently shows a temporary stock image that depicts a sedan — replace with a real Alphard photo when supplied. All other imagery is real client photography.
 - SPA: meta tags set client-side (fine for preview; consider SSR/prerender for production SEO)
 
 ## Backlog
