@@ -49,7 +49,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/wedding-cars" element={<Fleet />} />
             <Route path="/wedding-cars/:slug" element={<FleetDetail />} />
-            <Route path="/wedding-cars/teana" element={<Navigate to="/wedding-cars/alphard" replace />} />
+            <Route path="/wedding-cars/xpander" element={<Navigate to="/wedding-cars" replace />} />
             <Route path="/real-weddings" element={<RealWeddings />} />
             <Route path="/packages" element={<Packages />} />
             {LOCATIONS.map((l) => (

@@ -17,7 +17,7 @@ export const BLOG_POSTS = [
       {
         heading: "Faktor yang Memengaruhi Harga",
         paragraphs: [
-          "Jenis mobil adalah faktor utama. Mobil premium seperti BMW 5 Series atau Mercedes-Benz tentu memiliki harga berbeda dibanding MPV keluarga seperti Mitsubishi Xpander. Selain itu, tanggal pernikahan di musim ramai (peak season) biasanya lebih cepat penuh, sehingga memesan lebih awal sangat disarankan.",
+          "Jenis mobil adalah faktor utama. Mobil premium seperti BMW 5 Series atau Mercedes-Benz tentu memiliki harga berbeda dibanding MPV atau van premium seperti Toyota Alphard. Selain itu, tanggal pernikahan di musim ramai (peak season) biasanya lebih cepat penuh, sehingga memesan lebih awal sangat disarankan.",
           "Lokasi juga berpengaruh. Pernikahan di pusat kota Bogor, Sentul, atau bahkan ke luar kota seperti Jakarta dan Bandung dapat memiliki detail paket yang berbeda.",
         ],
       },
@@ -150,7 +150,7 @@ export const BLOG_POSTS = [
         heading: "Memilih Mobil untuk Venue di Bogor",
         paragraphs: [
           "Untuk pernikahan di Bogor, BMW 5 Series menjadi favorit banyak pasangan — tampilannya elegan di venue indoor maupun outdoor, dan fotogenik dengan latar pepohonan khas Bogor. Tersedia mulai dari Rp1.999.000.",
-          "Jika pernikahan Anda melibatkan rombongan keluarga besar, Toyota Fortuner atau Mitsubishi Xpander dapat melengkapi kebutuhan transportasi keluarga.",
+          "Jika pernikahan Anda melibatkan rombongan keluarga besar, Toyota Fortuner atau Toyota Alphard dapat melengkapi kebutuhan transportasi keluarga.",
         ],
       },
       {

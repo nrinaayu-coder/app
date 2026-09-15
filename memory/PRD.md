@@ -29,7 +29,7 @@ Build a production-ready, responsive website for THE WEDDING CARS — a premium 
 - LocalBusiness/Organization/Product/FAQPage/BreadcrumbList structured data
 
 ## Known Limitations
-- Toyota Alphard replaced Nissan Teana in the fleet (per visual edit, 2026-09-15); it currently shows a temporary stock image that depicts a sedan — replace with a real Alphard photo when supplied. All other imagery is real client photography.
+- Fleet updated per user (2026-09-15): BMW 5 Series, Mercedes-Benz, Nissan Teana (real photo fleet-02), Toyota Fortuner (photo fleet-01 per user instruction), Toyota Alphard (user-supplied photo fleet-alphard.jpg). Mitsubishi Xpander removed; /wedding-cars/xpander redirects to /wedding-cars.
 - SPA: meta tags set client-side (fine for preview; consider SSR/prerender for production SEO)
 
 ## Backlog

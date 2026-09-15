@@ -96,33 +96,33 @@ export const FLEET = [
     ],
   },
   {
+    slug: "teana",
+    name: "Nissan Teana",
+    tagline: "Quiet comfort, understated luxury.",
+    price: null,
+    image: "/images/fleet-02.jpg",
+    alt: "Nissan Teana dengan dekorasi bunga pernikahan",
+    description:
+      "Nissan Teana menawarkan kenyamanan khas sedan premium dengan kesan mewah yang tenang — cocok untuk pengantin yang menyukai elegansi sederhana.",
+    why: [
+      "Sedan premium dengan kabin senyap dan nyaman",
+      "Desain elegan yang tidak berlebihan",
+      "Nyaman untuk pengantin dan keluarga inti",
+    ],
+  },
+  {
     slug: "fortuner",
     name: "Toyota Fortuner",
     tagline: "Bold presence, comfortable journey.",
     price: null,
-    image: "/images/fleet-02.jpg",
-    alt: "Toyota Fortuner hitam dengan dekorasi pernikahan",
+    image: "/images/fleet-01.jpg",
+    alt: "Toyota Fortuner dengan dekorasi bunga pernikahan",
     description:
-      "Toyota Fortuner menghadirkan kehadiran yang gagah dengan kenyamanan ekstra — ideal untuk keluarga dan rombongan pengantin.",
+      "Toyota Fortuner menghadirkan kehadiran yang gagah dengan kenyamanan ekstra — ideal untuk pengantin dan rombongan keluarga.",
     why: [
       "Kabin tinggi dan lega, mudah untuk busana pengantin",
       "Tampil gagah dalam foto pernikahan",
       "Nyaman untuk perjalanan luar kota",
-    ],
-  },
-  {
-    slug: "xpander",
-    name: "Mitsubishi Xpander",
-    tagline: "Practical elegance for the family.",
-    price: null,
-    image: "/images/fleet-01.jpg",
-    alt: "Mitsubishi Xpander dengan dekorasi bunga pernikahan",
-    description:
-      "Mitsubishi Xpander adalah pilihan praktis dan elegan untuk kebutuhan transportasi keluarga di hari pernikahan.",
-    why: [
-      "Fleksibel untuk kebutuhan keluarga dan rombongan",
-      "Tetap tampil rapi dan elegan dengan dekorasi",
-      "Pilihan efisien tanpa mengorbankan kesan",
     ],
   },
   {
@@ -131,8 +131,7 @@ export const FLEET = [
     tagline: "First-class comfort, unmistakable presence.",
     price: null,
     image: "/images/fleet-alphard.jpg",
-    stockImage: "https://images.unsplash.com/photo-1693762464020-fc46e9cbeb33?crop=entropy&cs=srgb&fm=jpg&q=85",
-    alt: "Toyota Alphard untuk wedding car",
+    alt: "Toyota Alphard putih dengan dekorasi bunga pernikahan",
     description:
       "Toyota Alphard menghadirkan kemewahan dan kenyamanan kelas satu dengan kabin super lega — favorit untuk pengantin berbusana lengkap dan rombongan keluarga.",
     why: [
@@ -227,7 +226,7 @@ export const LOCATIONS = [
 export const FAQS = [
   {
     q: "Berapa harga sewa wedding car?",
-    a: "BMW 5 Series tersedia mulai dari Rp1.999.000. Harga final dapat bervariasi tergantung tanggal wedding, lokasi, durasi, dan ketersediaan. Untuk kendaraan lain seperti Mercedes-Benz, Toyota Fortuner, Mitsubishi Xpander, dan Toyota Alphard, silakan hubungi kami untuk harga & availability.",
+    a: "BMW 5 Series tersedia mulai dari Rp1.999.000. Harga final dapat bervariasi tergantung tanggal wedding, lokasi, durasi, dan ketersediaan. Untuk kendaraan lain seperti Mercedes-Benz, Toyota Fortuner, Nissan Teana, Toyota Fortuner, dan Toyota Alphard, silakan hubungi kami untuk harga & availability.",
   },
   { q: "Apakah sudah termasuk driver?", a: FALLBACK_ANSWER },
   { q: "Apakah tersedia dekorasi bunga?", a: FALLBACK_ANSWER },
