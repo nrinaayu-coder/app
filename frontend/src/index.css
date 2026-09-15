@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 45 20% 97%;
+        --foreground: 0 0% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 10%;
+        --primary: 0 0% 10%;
+        --primary-foreground: 45 20% 97%;
+        --secondary: 36 24% 93%;
+        --secondary-foreground: 0 0% 10%;
+        --muted: 36 24% 93%;
+        --muted-foreground: 30 5% 35%;
+        --accent: 36 24% 93%;
+        --accent-foreground: 0 0% 10%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 36 16% 86%;
+        --input: 36 16% 86%;
+        --ring: 35 32% 64%;
+        --radius: 0.125rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-cream text-charcoal font-sans antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    ::selection {
+        background: #C5A880;
+        color: #1A1A1A;
+    }
+    img {
+        @apply select-none;
+    }
+    :focus-visible {
+        outline: 2px solid #C5A880;
+        outline-offset: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        }
+        html { scroll-behavior: auto; }
+    }
+}
+
+@layer components {
+    .container-x {
+        @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+    }
+    .eyebrow {
+        @apply text-xs uppercase tracking-[0.25em] font-medium text-golddark font-sans mb-4 block;
+    }
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 bg-charcoal text-cream px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-golddark hover:text-white;
+    }
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 border border-charcoal/30 text-charcoal px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-300 hover:border-charcoal hover:bg-charcoal hover:text-cream;
+    }
+    .btn-outline-light {
+        @apply inline-flex items-center justify-center gap-2 border border-cream/40 text-cream px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-cream hover:text-charcoal;
+    }
+    .btn-gold {
+        @apply inline-flex items-center justify-center gap-2 bg-gold text-ink px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-golddark hover:text-white;
+    }
+    .hairline {
+        @apply border-t border-line;
+    }
+    .editorial-img {
+        @apply w-full h-full object-cover transition-transform duration-700 ease-out;
+    }
+    .img-frame {
+        @apply overflow-hidden bg-beige;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}

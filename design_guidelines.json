@@ -1,0 +1,121 @@
+{
+  "brand_identity": {
+    "name": "THE WEDDING CARS",
+    "tagline": "More than a wedding car. It's part of your story.",
+    "commercial_headline": "YOUR WEDDING DESERVES A BEAUTIFUL ARRIVAL.",
+    "supporting_indonesian": "Karena di hari spesial, setiap detail punya cerita.",
+    "archetype": "Luxury Editorial + Premium Automotive + Trustworthy Local Wedding Specialist",
+    "tone": ["Elegant", "Warm", "Premium", "Romantic", "Confident", "Personal", "Trustworthy"],
+    "primary_conversion": "WhatsApp Inquiry & Availability Check"
+  },
+  "typography": {
+    "headline_serif": {
+      "family": "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+      "import_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap",
+      "usage": "Main editorial headlines, section titles, quote callouts, hero titles"
+    },
+    "body_sans": {
+      "family": "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
+      "usage": "Navigation, body paragraphs, button text, feature specs, form labels, badges"
+    },
+    "accent_italic": {
+      "family": "'Cormorant Garamond', serif",
+      "style": "italic",
+      "usage": "Indonesian supporting subtext, romantic editorial captions, testimonial quotes"
+    },
+    "hierarchy_rules": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-neutral-900 leading-[1.15]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-serif text-neutral-900 tracking-tight leading-snug",
+      "h3_card": "text-xl sm:text-2xl font-serif text-neutral-900 leading-snug",
+      "eyebrow_label": "text-xs uppercase tracking-[0.25em] font-medium text-amber-900/70 font-sans mb-3 block",
+      "body_text": "text-base text-neutral-700 leading-relaxed font-sans font-normal",
+      "subtext_quote": "text-base sm:text-lg italic font-serif text-neutral-600 leading-relaxed"
+    }
+  },
+  "colors": {
+    "base_background": "#FAFAF7",
+    "surface_ivory": "#F4F0EA",
+    "surface_white": "#FFFFFF",
+    "surface_beige": "#EAE3D9",
+    "text_charcoal": "#1A1A1A",
+    "text_muted": "#5A5752",
+    "border_subtle": "#E5DFD5",
+    "dark_accent": "#0F0F0F",
+    "muted_champagne_gold": "#C5A880",
+    "muted_gold_hover": "#B3956D",
+    "whatsapp_green": "#25D366",
+    "whatsapp_dark": "#128C7E",
+    "forbidden_colors": [
+      "#7351B7",
+      "#1B93A4",
+      "bright metallic gold",
+      "neon green",
+      "bright primary red",
+      "heavy SaaS blue"
+    ]
+  },
+  "visual_enhancers": {
+    "editorial_borders": "1px solid #E5DFD5 with delicate 0.5px champagne gold accent highlights on hover",
+    "shadows": "Subtle, ambient paper shadow: shadow-[0_10px_30px_rgba(0,0,0,0.03)]",
+    "glassmorphism": "backdrop-blur-md bg-white/80 border border-stone-200/60 for sticky header and mobile sticky CTA bar",
+    "image_overlays": "Max opacity bg-gradient-to-t from-black/60 via-black/20 to-transparent for hero overlays so real photography shines through",
+    "card_radii": "rounded-none or rounded-sm for timeless luxury editorial aesthetic (NO aggressive rounded-3xl or cartoonish radii)"
+  },
+  "grids_and_layouts": {
+    "generous_spacing": "py-16 md:py-24 lg:py-32 for major homepage sections to create breathability",
+    "bento_fleet_grid": "Grid featuring BMW 5 Series in dominant col-span-full md:col-span-8 spotlight card with starting price Rp1.999.000, flanked by supporting fleet items",
+    "editorial_story_blocks": "60/40 split layouts combining large photography with editorial storytelling copy and subtle thin line dividers",
+    "real_weddings_masonry": "12-photo editorial masonry grid with hover captions and lightbox photo expansion",
+    "sticky_mobile_bottom_bar": "Fixed bottom bar on mobile viewports (<768px) with quick call/chat CTA: 'CHECK AVAILABILITY' pointing to WhatsApp",
+    "floating_whatsapp": "Fixed bottom-right floating WhatsApp button with ping animation and pre-filled inquiry text ('Halo The Wedding Cars, saya ingin cek ketersediaan mobil untuk tanggal...')"
+  },
+  "image_urls": {
+    "hero_bmw_white": "https://images.unsplash.com/photo-1668028526646-361088b266e4?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "bmw_5_series_featured": "https://images.unsplash.com/photo-1668028526659-c0caca5e9893?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "bmw_interior": "https://images.unsplash.com/photo-1614273444704-26eb9f90d1e7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "mercedes_benz_wedding": "https://images.unsplash.com/photo-1727042451438-d219de847f82?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "mercedes_vintage_coupe": "https://images.unsplash.com/photo-1596463097767-79a39851a776?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "toyota_fortuner_white": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "xpander_suv_front": "https://images.unsplash.com/photo-1667971289521-4c8050b844a3?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "nissan_teana_sedan": "https://images.unsplash.com/photo-1693762464020-fc46e9cbeb33?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "wedding_bride_inside_car": "https://images.unsplash.com/photo-1516536900061-d881b27e8ff8?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "wedding_couple_embrace_car": "https://images.unsplash.com/photo-1571394111091-d3edac39a32b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "chauffeur_opening_door": "https://images.unsplash.com/photo-1627285886624-5cd637dafb50?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "greenery_scenic_arrival": "https://images.unsplash.com/photo-1733376611181-80747df4b3d8?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "key_routes": [
+    { "path": "/", "name": "Homepage" },
+    { "path": "/wedding-cars", "name": "Fleet Catalog" },
+    { "path": "/wedding-cars/bmw-5-series", "name": "BMW 5 Series Detail (Hero Product)" },
+    { "path": "/wedding-cars/mercedes-benz", "name": "Mercedes-Benz E-Class Detail" },
+    { "path": "/wedding-cars/toyota-fortuner", "name": "Toyota Fortuner VRZ Detail" },
+    { "path": "/wedding-cars/mitsubishi-xpander", "name": "Mitsubishi Xpander Ultimate Detail" },
+    { "path": "/wedding-cars/nissan-teana", "name": "Nissan Teana Luxury Detail" },
+    { "path": "/real-weddings", "name": "Real Weddings Masonry Gallery" },
+    { "path": "/packages", "name": "Wedding Car Packages & Pricing" },
+    { "path": "/location/bogor", "name": "Wedding Car Rental Bogor" },
+    { "path": "/location/jakarta", "name": "Wedding Car Rental Jakarta" },
+    { "path": "/location/depok", "name": "Wedding Car Rental Depok" },
+    { "path": "/location/tangerang", "name": "Wedding Car Rental Tangerang" },
+    { "path": "/location/bekasi", "name": "Wedding Car Rental Bekasi" },
+    { "path": "/location/bandung", "name": "Wedding Car Rental Bandung" },
+    { "path": "/about", "name": "About The Wedding Cars" },
+    { "path": "/faq", "name": "Frequently Asked Questions" },
+    { "path": "/blog", "name": "Wedding Journal / Blog (10 Articles)" },
+    { "path": "/contact", "name": "Contact & Booking Inquiry" }
+  ],
+  "instructions_to_main_agent": [
+    "Load Google Fonts 'Cormorant Garamond' and 'Plus Jakarta Sans' in public/index.html or src/index.css.",
+    "Implement bilingual layout: prominent English luxury editorial titles paired with warm Indonesian supporting body and descriptive copy.",
+    "Ensure BMW 5 Series starting at Rp1.999.000 is highlighted as the primary Hero Product with an interactive gallery.",
+    "Include a date & location availability checking widget connected to WhatsApp pre-filled messaging.",
+    "All interactive elements (buttons, inputs, filters, tabs, links) MUST include data-testid attributes.",
+    "Do NOT use pure #000000 or high contrast SaaS templates. Use Warm White #FAFAF7, Ivory #F4F0EA, Charcoal #1A1A1A, and subtle Champagne Gold #C5A880.",
+    "Ensure mobile bottom sticky bar and floating WhatsApp button are responsive, non-intrusive, and always visible."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
+    "test_id_rule": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case format.",
+    "no_universal_transition": "Do NOT apply universal transition (transition: all). Use explicit CSS transitions for opacity and colors.",
+    "mobile_first": "Design mobile layouts with high clarity, touch targets of at least 44px, and sticky conversion bars."
+  }
+}
