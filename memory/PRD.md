@@ -28,6 +28,12 @@ Build a production-ready, responsive website for THE WEDDING CARS — a premium 
 - Floating WhatsApp + sticky mobile bottom CTA; analytics events via dataLayer (whatsapp_click, check_availability_click, booking_form_start/submit, fleet_click, fleet_detail_view, real_wedding_view, instagram_click, location_page_view)
 - LocalBusiness/Organization/Product/FAQPage/BreadcrumbList structured data
 
+## Implemented (2026-09-16) — Blog CMS + Motion upgrade
+- Admin CMS at /admin/login (JWT email+password, seeded admin, 5-attempt lockout): create/edit/delete blog articles with title, slug, date, excerpt, meta description, uploaded header image (object storage), alt text, sections editor, draft/publish
+- Backend: /api/auth/login|me, public /api/blog, admin CRUD /api/admin/blog, /api/admin/upload, /api/files/{path} (object storage via EMERGENT_LLM_KEY); 10 existing articles seeded into MongoDB
+- Public blog pages read from API with static fallback
+- Motion: Lenis smooth scrolling, kinetic hero (masked line-by-line reveal + slow zoom + scroll parallax + fade-out), slow editorial marquee, numbered manifesto chapters (01/02/03), scroll indicator
+
 ## Known Limitations
 - Fleet updated per user (2026-09-15): BMW 5 Series, Mercedes-Benz, Nissan Teana (real photo fleet-02), Toyota Fortuner (photo fleet-01 per user instruction), Toyota Alphard (user-supplied photo fleet-alphard.jpg). Mitsubishi Xpander removed; /wedding-cars/xpander redirects to /wedding-cars.
 - SPA: meta tags set client-side (fine for preview; consider SSR/prerender for production SEO)

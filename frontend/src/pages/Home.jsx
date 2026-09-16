@@ -1,6 +1,8 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import SEO from "../components/SEO";
+import Marquee from "../components/Marquee";
 import { SectionHeading, TrustStrip, FleetCard, FAQBlock, CTASection } from "../components/Sections";
 import { FLEET, WEDDING_IMAGES, BMW_IMAGES, FAQS, LOCATIONS, waLink, WA_MESSAGES } from "../data/site";
 import { track } from "../lib/analytics";
@@ -13,16 +15,28 @@ const fadeUp = {
 };
 
 function Hero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const lines = ["YOUR WEDDING", "DESERVES A", "BEAUTIFUL ARRIVAL."];
+
   return (
-    <section data-testid="hero" className="relative min-h-[92svh] flex items-end overflow-hidden bg-ink">
-      <img
-        src="/images/wedding-07.jpg"
-        alt="Pengantin pria membukakan pintu BMW 5 Series putih untuk pengantin wanita — The Wedding Cars Bogor"
-        className="absolute inset-0 w-full h-full object-cover object-[center_35%] animate-fade-in"
-        fetchPriority="high"
-      />
+    <section ref={ref} data-testid="hero" className="relative min-h-[100svh] flex items-end overflow-hidden bg-ink">
+      <motion.div style={{ y: imgY, scale: imgScale }} className="absolute inset-0 will-change-transform">
+        <motion.img
+          src="/images/wedding-07.jpg"
+          alt="Pengantin pria membukakan pintu BMW 5 Series putih untuk pengantin wanita — The Wedding Cars Bogor"
+          initial={{ scale: 1.12, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full h-full object-cover object-[center_35%]"
+          fetchPriority="high"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/20" />
-      <div className="relative container-x pb-24 pt-40 w-full">
+      <motion.div style={{ opacity: contentOpacity }} className="relative container-x pb-28 pt-44 w-full">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,18 +45,24 @@ function Hero() {
         >
           Premium Wedding Car Specialist
         </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-4xl sm:text-5xl lg:text-7xl text-cream tracking-tight leading-[1.05] max-w-4xl"
-        >
-          YOUR WEDDING DESERVES<br className="hidden sm:block" /> A BEAUTIFUL ARRIVAL.
-        </motion.h1>
+        <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl text-cream tracking-tight leading-[1.02]">
+          {lines.map((line, i) => (
+            <span key={line} className="block overflow-hidden pb-1">
+              <motion.span
+                initial={{ y: "112%" }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.35 + i * 0.14, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                className="block"
+              >
+                {line}
+              </motion.span>
+            </span>
+          ))}
+        </h1>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          transition={{ delay: 0.95, duration: 0.8 }}
           className="mt-6 max-w-xl text-cream/85 text-base sm:text-lg leading-relaxed"
         >
           Premium wedding cars in Bogor, Jabodetabek &amp; Bandung, prepared for one of the
@@ -51,7 +71,7 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.65, duration: 0.8 }}
+          transition={{ delay: 1.1, duration: 0.8 }}
           className="mt-4 font-serif italic text-gold text-lg"
         >
           More than a wedding car. It's part of your story.
@@ -59,7 +79,7 @@ function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
+          transition={{ delay: 1.25, duration: 0.8 }}
           className="mt-9 flex flex-col sm:flex-row gap-4"
         >
           <a
@@ -76,7 +96,21 @@ function Hero() {
             View Our Cars
           </Link>
         </motion.div>
-      </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 1 }}
+        className="absolute bottom-6 right-6 md:right-12 hidden sm:flex flex-col items-center gap-3"
+        aria-hidden="true"
+      >
+        <span className="text-[9px] uppercase tracking-[0.35em] text-cream/60 [writing-mode:vertical-lr]">Scroll</span>
+        <motion.span
+          animate={{ scaleY: [0.3, 1, 0.3], opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-14 bg-gold origin-top"
+        />
+      </motion.div>
     </section>
   );
 }
@@ -214,7 +248,7 @@ function StoryBlocks() {
       <div className="container-x">
         <motion.div {...fadeUp}>
           <SectionHeading
-            eyebrow="The Experience"
+            eyebrow="The Manifesto"
             title="MORE THAN A WEDDING CAR."
             sub="From your first arrival to the final photograph, your wedding car should feel like part of the celebration."
             center
@@ -231,9 +265,15 @@ function StoryBlocks() {
               <div className="img-frame aspect-[3/4]">
                 <img src={b.img} alt={b.alt} loading="lazy" className="editorial-img group-hover:scale-[1.04]" />
               </div>
-              <div className="pt-6 border-t border-gold/50 mt-6">
-                <h3 className="font-serif text-2xl text-charcoal">{b.title}</h3>
-                <p className="mt-2 text-muted2 text-sm leading-relaxed">{b.text}</p>
+              <div className="pt-6 border-t border-charcoal/25 mt-6 flex gap-5 items-start">
+                <span className="font-serif text-5xl leading-none text-gold/70 shrink-0" aria-hidden="true">
+                  0{i + 1}
+                </span>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-golddark mb-1.5">Chapter 0{i + 1}</p>
+                  <h3 className="font-serif text-2xl text-charcoal">{b.title}</h3>
+                  <p className="mt-2 text-muted2 text-sm leading-relaxed">{b.text}</p>
+                </div>
               </div>
             </motion.article>
           ))}
@@ -442,6 +482,7 @@ export default function Home() {
       />
       <Hero />
       <TrustStrip />
+      <Marquee />
       <FleetSection />
       <BMWFeature />
       <StoryBlocks />

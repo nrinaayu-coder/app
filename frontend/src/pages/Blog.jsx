@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { SectionHeading, Breadcrumbs, CTASection } from "../components/Sections";
 import { BLOG_POSTS } from "../data/blog";
+import { api, imgUrl } from "../lib/api";
 
 export default function Blog() {
+  const [posts, setPosts] = useState(BLOG_POSTS);
+
+  useEffect(() => {
+    api.get("/blog")
+      .then((r) => { if (Array.isArray(r.data) && r.data.length) setPosts(r.data); })
+      .catch(() => {});
+  }, []);
+
   return (
     <>
       <SEO
@@ -22,11 +32,11 @@ export default function Blog() {
             sub="Panduan praktis seputar wedding car — ditulis untuk membantu persiapan pernikahan Anda."
           />
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14">
-            {BLOG_POSTS.map((post, i) => (
-              <article key={post.slug}>
+            {posts.map((post, i) => (
+              <article key={post.slug || post.id}>
                 <Link to={`/blog/${post.slug}`} data-testid={`blog-card-${post.slug}`} className="group block">
                   <div className="img-frame aspect-[4/3]">
-                    <img src={post.image} alt={post.alt} loading={i < 3 ? "eager" : "lazy"} className="editorial-img group-hover:scale-[1.04]" />
+                    <img src={imgUrl(post.image)} alt={post.alt} loading={i < 3 ? "eager" : "lazy"} className="editorial-img group-hover:scale-[1.04]" />
                   </div>
                   <p className="mt-5 text-[10px] uppercase tracking-[0.25em] text-golddark">
                     {new Date(post.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}

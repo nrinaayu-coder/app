@@ -88,6 +88,17 @@
     }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@layer utilities {
+    .animate-marquee {
+        animation: marquee 55s linear infinite;
+    }
+}
+
 @layer base {
     [data-debug-wrapper="true"] {
         display: contents !important;

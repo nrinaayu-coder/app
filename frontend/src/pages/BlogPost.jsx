@@ -1,13 +1,33 @@
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { CTASection, Breadcrumbs } from "../components/Sections";
 import { BLOG_POSTS } from "../data/blog";
+import { api, imgUrl } from "../lib/api";
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const [post, setPost] = useState(() => BLOG_POSTS.find((p) => p.slug === slug) || null);
+  const [notFound, setNotFound] = useState(false);
+  const [allPosts, setAllPosts] = useState(BLOG_POSTS);
 
-  if (!post) {
+  useEffect(() => {
+    setPost(BLOG_POSTS.find((p) => p.slug === slug) || null);
+    setNotFound(false);
+    api.get("/blog")
+      .then((r) => {
+        if (Array.isArray(r.data) && r.data.length) {
+          setAllPosts(r.data);
+          const found = r.data.find((p) => p.slug === slug);
+          if (found) setPost(found);
+          else if (!BLOG_POSTS.find((p) => p.slug === slug)) setNotFound(true);
+        }
+      })
+      .catch(() => {});
+  }, [slug]);
+
+  if (notFound || !post) {
+    if (!notFound && !post) return null;
     return (
       <div className="container-x pt-40 pb-24 text-center">
         <h1 className="font-serif text-4xl text-charcoal">Article not found</h1>
@@ -18,7 +38,7 @@ export default function BlogPost() {
     );
   }
 
-  const related = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
   const crumbs = [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
@@ -29,7 +49,7 @@ export default function BlogPost() {
     <>
       <SEO
         title={`${post.title} | The Wedding Cars`}
-        description={post.excerpt}
+        description={post.metaDescription || post.excerpt}
         path={`/blog/${post.slug}`}
         image={post.image}
         breadcrumbs={crumbs}
@@ -46,7 +66,7 @@ export default function BlogPost() {
         </div>
         <div className="container-x max-w-4xl mt-10">
           <div className="img-frame aspect-[16/9]">
-            <img src={post.image} alt={post.alt} fetchPriority="high" className="editorial-img" />
+            <img src={imgUrl(post.image)} alt={post.alt} fetchPriority="high" className="editorial-img" />
           </div>
         </div>
         <div className="container-x max-w-3xl mt-12 space-y-10">
@@ -76,7 +96,7 @@ export default function BlogPost() {
             {related.map((p) => (
               <Link key={p.slug} to={`/blog/${p.slug}`} data-testid={`related-${p.slug}`} className="group">
                 <div className="img-frame aspect-[4/3]">
-                  <img src={p.image} alt={p.alt} loading="lazy" className="editorial-img group-hover:scale-[1.04]" />
+                  <img src={imgUrl(p.image)} alt={p.alt} loading="lazy" className="editorial-img group-hover:scale-[1.04]" />
                 </div>
                 <p className="mt-3 font-serif text-lg text-charcoal leading-snug group-hover:text-golddark transition-colors">
                   {p.title}
