@@ -10,7 +10,7 @@ Build a production-ready, responsive website for THE WEDDING CARS — a premium 
 
 ## Architecture
 - Frontend: React 19 + react-router-dom 7 (SPA), Tailwind, framer-motion, shadcn accordion
-- Backend: FastAPI template kept as-is (health endpoint only; no DB needed per user choice)
+- Backend: Node.js 20 + Express + MySQL (MariaDB), JWT auth, object storage for uploads
 - Images: extracted from PDFs via PyMuPDF, resized ≤1600px, JPEG q82, served from /public/images
 - SEO: per-page SEO component (title/meta/canonical/OG/JSON-LD), static sitemap.xml + robots.txt
 
@@ -33,6 +33,14 @@ Build a production-ready, responsive website for THE WEDDING CARS — a premium 
 - Backend: /api/auth/login|me, public /api/blog, admin CRUD /api/admin/blog, /api/admin/upload, /api/files/{path} (object storage via EMERGENT_LLM_KEY); 10 existing articles seeded into MongoDB
 - Public blog pages read from API with static fallback
 - Motion: Lenis smooth scrolling, kinetic hero (masked line-by-line reveal + slow zoom + scroll parallax + fade-out), slow editorial marquee, numbered manifesto chapters (01/02/03), scroll indicator
+
+## Implemented (2026-09-16) — Migration to full-stack JavaScript + MySQL
+- Backend migrated Python/FastAPI → Node.js 20 + Express (/app/backend: server.js, src/db.js, src/auth.js, src/storage.js, src/seed.js, src/routes/*)
+- Database migrated MongoDB → MySQL/MariaDB (tables: users, blog_posts w/ JSON sections, login_attempts, files; unique indexes on users.email + blog_posts.slug)
+- All data migrated via scripts/migrate-from-mongo.js: 1 admin user, 11 blog posts (10 seeded + 1 user-created), 3 file records
+- API contract unchanged — zero frontend changes required; verified login, blog CRUD, image upload/serve, lockout, public blog
+- Supervisor: backend now runs `node server.js`; added `mysql` program (mysqld_safe) for DB autostart; MongoDB service still present but unused by the app
+- Python files removed (server.py, requirements.txt); .env.example + full README.md added for handover
 
 ## Known Limitations
 - Fleet updated per user (2026-09-15): BMW 5 Series, Mercedes-Benz, Nissan Teana (real photo fleet-02), Toyota Fortuner (photo fleet-01 per user instruction), Toyota Alphard (user-supplied photo fleet-alphard.jpg). Mitsubishi Xpander removed; /wedding-cars/xpander redirects to /wedding-cars.
